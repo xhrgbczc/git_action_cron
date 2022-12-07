@@ -1,113 +1,59 @@
-# 微信模板消息
+# 每日早安推送给别人家的女朋友
 
-发送你的模板消息给你的男/女朋友，嘿嘿~
+首发在小红书，但是有大家说字看不清，因此在这里搞一篇使用说明。
 
-### 步骤
+> 我一脸懵逼地在小红书新建的群里听说有网友在抖音帮推我这个项目..
+>
+> 在此表示十分感谢，因为我懒得做视频。。当时也是一时兴起，所以就只发了小红书。。
+>
+> 大家喜欢我的项目我真的十分感谢，不过有朋友说找不到我本人。对于涨粉丝这件事情我还是很感兴趣的。。
 
-1、注册微信公众号平台。
+*我的小红书昵称==抖音昵称==微博账号==一切社交平台==“纠结当道”*
 
-- [微信公众号平台](https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index)
-- 获取appID appsecret（等下会使用）
+并且都是柯南的头像
 
-2、注册和风天气并申请为个人开发者
+![WechatIMG1](https://user-images.githubusercontent.com/9566402/185802023-1f28c90a-40e7-446e-8dad-420c83f83e38.jpeg)
+![WechatIMG2](https://user-images.githubusercontent.com/9566402/185802026-ef7c1b99-66a8-4535-a6a4-804677657667.jpeg)
 
-- [和风天气](https://console.qweather.com/#/apps)
-- 创建应用 并获取到KEY（等下会使用）
-- ![image-20220823185853186](assets/image-20220823185853186.png)
+---------------------- 以下是正文 ----------------------
 
-3、准备好本地PHP运行环境（可以使用phpstudy xampp等，只要能运行就行）或线上PHP运行环境
+在我刚想构思这个教程怎么让不懂编程的朋友很快入门的时候，我考虑到：避免服务器搭建，避免定时任务，避免接触代码。在经历过各种思考后，觉得可以用 Github Actions 来白嫖。。
 
-- 将Duck.php wechat.php config.ini放到环境里
-- 更改config.ini里下图信息
-- ![image-20220824091806716](assets/image-20220824091806716.png)
+效果如图。当然，文字是可以修改的。
+![5e72e89fd7ff692a0bfa62010517c0c](https://user-images.githubusercontent.com/9566402/183242263-c93517a2-5377-435d-8386-8d47252c9e07.jpg)
 
-### 自动发送
+首先，按图搜索，测试号，进来之后微信扫码登录！
+![cf7dbd4502df44765ed3506f55caea5](https://user-images.githubusercontent.com/9566402/183242272-134e37e7-718d-42dd-9ed7-fca2810e94e6.png)
 
-#### 免费定时发送 天气信息给女朋友（Gihub Action）
+按图点击 Use this template，创建到自己的仓库下！
+![e6581c43572b00b12c1a82ca8d7178b](https://user-images.githubusercontent.com/9566402/183242340-2ef26c63-1ca1-420e-abd4-8672c25d61c9.png)
 
-1. 注册Github
+按下图，创建模板，设置变量，把微信公众平台上的各种字符串按说明创建到 GitHub -> Settings -> Secrets -> Actions 中。
+![71bf9d11a876d23ef0f0728645a8ba0](https://user-images.githubusercontent.com/9566402/183242301-fd6ab30e-bfe5-4245-b2a9-f690184db307.png)
+![381e8ee4a7c5ec6b8c09719f2c7e486](https://user-images.githubusercontent.com/9566402/183242295-4dcf06bb-2083-4883-8745-0af753ca805c.png)
+![48c60750cec7adc546e0ad99e3082b3](https://user-images.githubusercontent.com/9566402/183242320-18500adc-14e5-4522-a3ad-ae19cc4479bf.png)
 
-2. fork 本库 [[wechat_to_lover]](https://github.com/GuaiMiu/wechat_to_lover)![image-20220824193426793](assets/image-20220824193426793.png)
+启用自己项目下的 Action！
+![30a5b1b2b06ba4a40a3d8ef01652409](https://user-images.githubusercontent.com/9566402/183242334-9943c538-ba3d-4d01-8377-d040143b7560.png)
 
-3. 点击Settings![image-20220824193557306](assets/image-20220824193557306.png)
+如果运行出现错误，按以下方法可以看到错误，在这里 issue 提问也可以，在小红书群里问也可以
+![6b0da6f44e18c2bfd94910c377d13e6](https://user-images.githubusercontent.com/9566402/183242349-1aa5ada6-2ee7-4cf9-a542-4b2dad88b8fe.png)
 
-4. 点击Secrets =>Actions![image-20220824193706078](assets/image-20220824193706078.png)
+启用后可以直接运行，看看女朋友的手机有没有收到推送吧！
+这个定时任务是每天早晨8点推送，如果会编程的同学可以自己自定义一些东西～
 
-5. 点击![image-20220824193803480](assets/image-20220824193803480.png)
+图中的操作，除了各种英文字符串不一样，模板消息中的中文不一样，其他的应该都是一样的，不然程序跑不通的～
 
-6. 新建配置项![image-20220824194053838](assets/image-20220824194053838.png)
+Github 的右上角可以点击 star 给我点鼓励吧亲
 
-7. 依次添加一下信息
+小红书上点点关注，点点赞，有什么好玩的东西可以at我，我来教你们做
 
-   ```
-   #微信配置
-   appid 
-   appsecret 
-   
-   #和风天气
-   #key
-   
-   hefengkey 
-   #可以填中文的 省 市 区县
-   hefengcity 
-   
-   #和他/她在一起的时间 EG: togetherdays = 2022-6-10 22:00
-   togetherdays 
-   
-   #第一个人的生日(出生日期) EG: birthday = 2001-10-05
-   birthday 
-   
-   #第二个人的生日(出生日期) EG: birthday = 2000-04-19
-   birthday2 
-   ```
+ps. 有一些注意事项在此补充
 
-8. 添加后能看到自己所添加的配置项![image-20220824194131014](assets/image-20220824194131014.png)
+1. 第一次登录微信公众平台测试号给的 app secret 是错误的，刷新一下页面即可
+2. 生日的日期格式是：`05-20`，纪念日的格式是 `2022-08-09`，请注意区分。城市请写到地级市，比如：`北京`，`广州`，`承德`
+3. 变量中粘贴的各种英文字符串不要有空格，不要有换行，除了模板之外都没有换行
+4. Github Actions 的定时任务，在 workflow 的定义是 `0 0 * * *`，是 UTC 时间的零点，北京时间的八点。但是由于 Github 同一时间任务太多，因此会有延迟
+5. 我会偶尔优化一下代码，emm 但现在我自己在做一个完整的平台项目，想让大家更加便捷地上手
 
-9. 然后点击 注:第一次会提示什么（忘了），反正同意就行![image-20220824194201784](assets/image-20220824194201784.png)
-
-10. 点击CI 点击RUN就能运行测试了![image-20220824194710970](assets/image-20220824194710970.png)
-
-
-
-##### 自建或购买服务器
-
-1. 可以使用bt的计划任务添加定时访问url 或 定时shell 脚本定时发送 也可以使用linux下的crontab
-
-EG:![image-20220823191217969](assets/image-20220823191217969.png)
-
-
-
-
-
-
-
-### 注意
-
-1. 默认给所有关注了测试号的人发送模板消息
-2. 默认给模板列表 序号1的模板发送消息 无需自行添加模板ID
-
-### 效果
-
-![demo](assets/demo.png)
-
-### 模板代码
-
-```
-时间:{{date.DATA}}
-位置:{{city.DATA}}
-天气:{{weather.DATA}}
-气温:{{temp.DATA}}
-湿度:{{humidity.DATA}}
-穿衣指数:{{indices.DATA}}
-现有确诊:{{currentConfirm.DATA}}
-新增确诊:{{lastLocalSureNew.DATA}}
-新增无症状:{{lastIncrHideNew.DATA}}
-我们已经在一起{{togetherdays.DATA}}了
-距离扁嘴伦生日还有{{birthday.DATA}}天
-距离大公鸡生日还有{{birthday2.DATA}}天
-{{qinghua.DATA}}
-```
-
-复制到
-
-![image-20220823190926225](assets/image-20220823190926225.png)
+但那个平台还没完全做好，我要抑制住我赚钱（不是）的欲望。。
